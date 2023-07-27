@@ -1,41 +1,51 @@
 <template>
-  <div>
-    <v-container class="bg-surface-variant">
-      <v-row :align="'center'">
-        <v-col v-for="n in 5" :key="n" cols="12" sm="4" md="4" lg="3" xl="3">
-          <v-card>
-            <v-img
-              src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
-            ></v-img>
-            <v-card-title>Titulo</v-card-title>
-            <v-card-text class="overflow-hidden card-limits">
-              Descubre todo lo que necesitas saber sobre este fascinante tema.
-              "Descubre todo lo que necesitas saber sobre este fascinante tema.
-              Exploraremos los conceptos fundamentales, las mejores prácticas y
-              los consejos expertos que te ayudarán a comprenderlo a fondo.
-              Desde los conceptos básicos hasta los detalles más avanzados, este
-              artículo te guiará paso a paso en tu viaje de aprendizaje.
-              Prepárate para sumergirte en un mundo lleno de conocimientos y
-              descubrimientos emocionantes"
-            </v-card-text>
-            <v-card-actions>
-              <v-btn variant="plain" class="mt-2">Leer Más</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+  <v-carousel
+    cycle
+    height="400"
+    hide-delimiter-background
+    show-arrows-on-hover
+  >
+    <v-carousel-item
+      v-for="(slide, i) in slides"
+      :key="i"
+    >
+      <v-sheet
+        :color="colors[i]"
+        height="100%"
+      >
+        <v-row
+          class="fill-height"
+          :align="'center'"
+          justify="center"
+        >
+          <div class="text-h2">
+            {{ slide }} Slide
+          </div>
+        </v-row>
+      </v-sheet>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 
 <script>
-export default {
-  name: "IndexPage",
-};
+  export default {
+    data () {
+      return {
+        colors: [
+          'indigo',
+          'warning',
+          'pink darken-2',
+          'red lighten-1',
+          'deep-purple accent-4',
+        ],
+        slides: [
+          'First',
+          'Second',
+          'Third',
+          'Fourth',
+          'Fifth',
+        ],
+      }
+    },
+  }
 </script>
-
-<style>
-.card-limits {
-  max-height: 60px; /* Ajusta la altura deseada para las tarjetas */
-}
-</style>

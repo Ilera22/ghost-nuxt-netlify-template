@@ -8,7 +8,8 @@
           <v-app-bar-nav-icon @click="menuOpen = !menuOpen"></v-app-bar-nav-icon>
           <v-menu v-model="menuOpen" offset-y>
             <v-list>
-              <v-list-item
+              <v-list-item 
+
                 v-for="item in nav"
                 :key="item.icon"
                 :to="item.to"
@@ -28,7 +29,7 @@
           <v-spacer></v-spacer>
           <v-app-bar-items>
             <v-btn
-              variant="plain"
+              plain
               v-for="item in nav"
               :key="item.icon"
               :to="item.to"
@@ -70,7 +71,7 @@ export default {
           text: "Contact",
           title: "Our Contact info",
           active: false,
-          to: "/contact",
+          to: "/Test",
         },
       ],
     };
