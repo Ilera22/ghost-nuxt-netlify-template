@@ -3,7 +3,7 @@
     <v-layout row justify-center>
       <v-responsive v-if="$vuetify.breakpoint.smAndDown">
         <v-app-bar app color="red">
-          <v-btn>Desktop</v-btn>
+          <v-btn plain>Gremio KTG</v-btn>
           <v-spacer></v-spacer>
           <v-app-bar-nav-icon @click="menuOpen = !menuOpen"></v-app-bar-nav-icon>
           <v-menu v-model="menuOpen" offset-y>
@@ -24,7 +24,7 @@
 
       <v-responsive v-else>
         <v-app-bar app dark color="blue-grey darken-1">
-          <v-btn>Desktop</v-btn>
+          <v-btn plain>Gremio KTG</v-btn>
           <v-spacer></v-spacer>
           <v-app-bar-items>
             <v-btn
