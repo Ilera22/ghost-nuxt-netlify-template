@@ -1,5 +1,15 @@
 <template>
-  <!-- ... -->
+    <div>
+    <h1>Posts desde el API de Ghost</h1>
+    <div v-if="loading">Cargando...</div>
+    <div v-else>
+      <div v-for="post in posts" :key="post.id">
+        <h2>{{ post.title }}</h2>
+        <div v-html="post.html"></div>
+        <hr />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
