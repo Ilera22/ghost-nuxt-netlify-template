@@ -1,20 +1,21 @@
 // api/ghost.js
-
 import axios from 'axios';
 
-// Configura la URL base del API de Ghost
-const apiBaseUrl = 'https://gremioktg.com/ghost/api/v3'; // Reemplaza esta URL con la dirección correcta de la API de Ghost
+// Define la URL base del API de Ghost
+const apiBaseUrl = 'https://example.com/ghost/api/v3'; // Reemplaza esto con la URL de tu API de Ghost
 
-// Define una función para obtener los posts del API de Ghost
-export async function getPosts() {
+// Función para obtener los últimos posts desde el API de Ghost
+export async function getPosts(limit = 5) {
   try {
-    const response = await axios.get(`${apiBaseUrl}/posts`);
-    return response.data;
+    const response = await axios.get(`${apiBaseUrl}/posts`, {
+      params: {
+        limit,
+        order: 'published_at desc',
+      },
+    });
+    return response.data.posts;
   } catch (error) {
     console.error('Error al obtener los posts:', error);
-    return [];
+    throw error;
   }
 }
-
-// Exporta las funciones que necesites para usar en otras partes de tu aplicación
-// export { getPosts, /* otras funciones */ };

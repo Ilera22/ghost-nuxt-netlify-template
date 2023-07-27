@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Prueba de conexión al API de Ghost</h1>
+    <h1>Posts desde el API de Ghost</h1>
     <div v-if="loading">Cargando...</div>
     <div v-else>
       <div v-for="post in posts" :key="post.id">
@@ -13,19 +13,23 @@
 </template>
 
 <script>
-import { getPosts } from '../api/ghost'; // Importa la función getPosts desde el archivo api/ghost.js
+import { getPosts } from '../api/ghost';
 
 export default {
   async asyncData() {
     try {
-      // Usa la función getPosts para obtener los posts del API
-      const posts = await getPosts();
+      // Realiza una solicitud al API de Ghost para obtener los últimos 5 posts
+      const posts = await getPosts(5);
+
+      // Retorna los datos obtenidos para mostrarlos en la página
       return {
         posts,
         loading: false,
       };
     } catch (error) {
       console.error('Error al obtener los posts:', error);
+
+      // En caso de error, muestra un mensaje de error en la página
       return {
         posts: [],
         loading: false,
@@ -42,3 +46,4 @@ export default {
   },
 };
 </script>
+
