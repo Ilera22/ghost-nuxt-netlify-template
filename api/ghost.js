@@ -1,8 +1,8 @@
-// api/ghost.js
-import axios from 'axios';
+import axios from 'axios'; // Agrega esta línea para importar axios
+import GhostContentAPI from '@tryghost/content-api';
 
-// Define la URL base del API de Ghost
-const apiBaseUrl = 'https://example.com/ghost/api/v3'; // Reemplaza esto con la URL de tu API de Ghost
+const apiBaseUrl = process.env.API_URL;
+const apiKey = process.env.API_KEY;
 
 // Función para obtener los últimos posts desde el API de Ghost
 export async function getPosts(limit = 5) {
@@ -11,6 +11,7 @@ export async function getPosts(limit = 5) {
       params: {
         limit,
         order: 'published_at desc',
+        key: apiKey, // Agrega el API key como parámetro de la consulta
       },
     });
     return response.data.posts;
@@ -19,3 +20,11 @@ export async function getPosts(limit = 5) {
     throw error;
   }
 }
+
+const ghostApi = new GhostContentAPI({
+  url: apiBaseUrl,
+  key: apiKey,
+  version: 'v3',
+});
+
+export default ghostApi;

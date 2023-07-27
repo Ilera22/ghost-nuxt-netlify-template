@@ -1,4 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
+// nuxt.config.js
+import dotenv from 'dotenv';
+
+// Carga las variables de entorno desde el archivo .env
+dotenv.config();
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -63,6 +68,11 @@ export default {
     baseURL: 'https://gremioktg.com/ghost/api/v3', // Reemplaza esto con la URL de tu API de Ghost
 
     
+  },
+
+  env: {
+    apiBaseUrl: process.env.API_BASE_URL,
+    apiContentKey: process.env.API_CONTENT_KEY,
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify

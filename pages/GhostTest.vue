@@ -1,29 +1,23 @@
 <template>
-  <div>
-    <h1>Posts desde el API de Ghost</h1>
-    <div v-if="loading">Cargando...</div>
-    <div v-else>
-      <div v-for="post in posts" :key="post.id">
-        <h2>{{ post.title }}</h2>
-        <div v-html="post.html"></div>
-        <hr />
-      </div>
-    </div>
-  </div>
+  <!-- ... -->
 </template>
 
 <script>
-import { getPosts } from '../api/ghost';
+import ghostApi from '../api/ghost';
 
 export default {
+  name: "GhostTest",
   async asyncData() {
     try {
       // Realiza una solicitud al API de Ghost para obtener los últimos 5 posts
-      const posts = await getPosts(5);
+      const response = await ghostApi.posts.browse({
+        limit: 5,
+        order: 'published_at desc',
+      });
 
       // Retorna los datos obtenidos para mostrarlos en la página
       return {
-        posts,
+        posts: response,
         loading: false,
       };
     } catch (error) {
@@ -46,4 +40,3 @@ export default {
   },
 };
 </script>
-

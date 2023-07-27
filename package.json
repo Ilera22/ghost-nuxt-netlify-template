@@ -12,6 +12,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@tryghost/content-api": "^1.11.15",
     "core-js": "^3.25.3",
+    "dotenv": "^16.3.1",
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
