@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container class="bg-surface-variant">
-      <v-row align="center">
+      <v-row :align="'center'">
         <v-col v-for="n in 5" :key="n" cols="12" sm="4" md="4" lg="3" xl="3">
           <v-card>
             <v-img
