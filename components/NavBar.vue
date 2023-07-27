@@ -15,6 +15,7 @@
             <v-spacer></v-spacer>
             <v-app-bar-items>
               <v-btn
+                variant="plain"
                 v-for="item in nav"
                 :key="item.icon"
                 :to="item.to"
