@@ -61,7 +61,7 @@ export default {
           text: "Todos",
           title: "Some stuff that needs doing",
           active: false,
-          to: "/pages/GhostVue",
+          to: "/GhostVue",
         },
         {
           icon: "email",
