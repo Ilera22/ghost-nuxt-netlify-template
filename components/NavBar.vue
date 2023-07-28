@@ -2,19 +2,19 @@
   <div id="app">
     <v-layout row justify-center>
       <v-responsive v-if="$vuetify.breakpoint.smAndDown">
-        <v-app-bar app color="deep-purple accent-3">
+        <v-app-bar app color="red">
           <v-btn plain @click="goToIndex">GremioKTG</v-btn>
           <v-spacer></v-spacer>
           <v-app-bar-nav-icon @click="menuOpen = !menuOpen"></v-app-bar-nav-icon>
           <v-menu v-model="menuOpen" offset-y>
             <v-list>
-              <v-list-item 
-
+              <v-list-item
+    
                 v-for="item in nav"
                 :key="item.icon"
                 :to="item.to"
                 :title="item.title"
-                @click="menuOpen = false"
+                @click="handleMenuClick(item.to)"
               >
                 <v-list-item-title>{{ item.text }}</v-list-item-title>
               </v-list-item>
@@ -25,7 +25,7 @@
 
       <v-responsive v-else>
         <v-app-bar app dark color="deep-purple accent-3">
-          <v-btn plain @click="goToIndex">Gremio KTG</v-btn>
+          <v-btn plain @click="goToIndex">GremioKTG</v-btn>
           <v-spacer></v-spacer>
           <v-app-bar-items>
             <v-btn
@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       dialog: false,
-      menuOpen: false, // Agregamos esta propiedad para controlar el estado del menú
+      menuOpen: false,
       nav: [
         {
           icon: "info",
@@ -61,25 +61,29 @@ export default {
         },
         {
           icon: "assignment_turned_in",
-          text: "Todos",
+          text: "Test",
           title: "Some stuff that needs doing",
           active: false,
-          to: "/GhostTest",
+          to: "/Test",
         },
         {
           icon: "email",
-          text: "Test",
+          text: "Contact",
           title: "Our Contact info",
           active: false,
-          to: "/Test",
+          to: "/contact",
         },
       ],
     };
   },
+  methods: {
+    handleMenuClick(to) {
+      this.$router.push(to);
+      this.menuOpen = false; // Cerramos el menú después de la redirección
+    },
+    goToIndex() {
+      this.$router.push('/');
+    },
+  },
 };
 </script>
-<style scoped>
-h1 {
-  font-size: 20px;
-}
-</style>
