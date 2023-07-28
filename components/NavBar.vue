@@ -68,7 +68,7 @@ export default {
         },
         {
           icon: "email",
-          text: "Contact",
+          text: "Test",
           title: "Our Contact info",
           active: false,
           to: "/Test",
