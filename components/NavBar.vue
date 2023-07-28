@@ -78,7 +78,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* Estilos personalizados para el carrusel si es necesario */
-</style>
