@@ -4,8 +4,7 @@ import dotenv from 'dotenv';
 
 // Carga las variables de entorno desde el archivo .env
 dotenv.config();
-console.log('API_BASE_URL:', process.env.API_BASE_URL);
-console.log('API_CONTENT_KEY:', process.env.API_CONTENT_KEY);
+
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -71,8 +70,8 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: process.env.API_BASE_URL
-    
+    apiBaseUrl: process.env.API_BASE_URL,
+    apiContentKey: process.env.API_CONTENT_KEY,    
   },
 
   env: {
@@ -98,11 +97,6 @@ export default {
       }
     }
   },
-
-  // Configuración de la API de contenido de Ghost
-  ghost: {
-  },
-  
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

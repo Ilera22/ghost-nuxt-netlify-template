@@ -4,6 +4,9 @@ import GhostContentAPI from '@tryghost/content-api';
 const apiBaseUrl = process.env.API_BASE_URL;
 const apiKey = process.env.API_CONTENT_KEY;
 
+console.log('API_BASE_URL:', process.env.API_BASE_URL);
+console.log('API_CONTENT_KEY:', process.env.API_CONTENT_KEY);
+
 // Función para obtener los últimos posts desde el API de Ghost
 export async function getPosts(limit = 5) {
   try {
