@@ -94,9 +94,10 @@ export default {
 
   // Configuración de la API de contenido de Ghost
   ghost: {
-    apiUrl: 'process.env.API_BASE_URL',
-    contentApiKey: 'process.env.API_CONTENT_KEY',
+    apiUrl: process.env.API_BASE_URL,
+    contentApiKey: process.env.API_CONTENT_KEY,
   },
+  
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
