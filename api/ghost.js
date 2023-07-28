@@ -1,8 +1,8 @@
 import axios from 'axios'; // Agrega esta línea para importar axios
 import GhostContentAPI from '@tryghost/content-api';
 
-const apiBaseUrl = process.env.API_URL;
-const apiKey = process.env.API_KEY;
+const apiBaseUrl = process.env.API_BASE_URL;
+const apiKey = process.env.API_CONTENT_KEY;
 
 // Función para obtener los últimos posts desde el API de Ghost
 export async function getPosts(limit = 5) {
