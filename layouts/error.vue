@@ -8,16 +8,15 @@
               <h1 v-if="error.statusCode === 404">
                 {{ pageNotFound }}
               </h1>
-              
-              
+      
               <h1 v-else>
                 {{ otherError }}
               </h1>
             </v-card-title>
             <v-card-text>
-              <NuxtLink to="/">
+              <v-btn to="/">
                 Vamos a la pagina principal
-              </NuxtLink>
+              </v-btn>
             </v-card-text>
           </v-card>
         </v-flex>
