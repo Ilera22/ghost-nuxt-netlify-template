@@ -11,7 +11,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: 'gremioktg-blog',
+    titleTemplate: 'GremioKTG',
     title: 'GremioKTG',
     htmlAttrs: {
       lang: 'en'
@@ -47,8 +47,8 @@ export default {
   ],
 
   publicRuntimeConfig: {
-    apiUrl: process.env.API_BASE_URL,
-    contentApiKey: process.env.API_CONTENT_KEY,
+    apiBaseUrl: process.env.API_BASE_URL,
+    apiKey: process.env.API_CONTENT_KEY,
   },
 
 
