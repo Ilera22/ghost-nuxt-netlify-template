@@ -46,6 +46,12 @@ export default {
     '@nuxtjs/vuetify',
   ],
 
+  publicRuntimeConfig: {
+    apiUrl: process.env.API_BASE_URL,
+    contentApiKey: process.env.API_CONTENT_KEY,
+  },
+
+  
     // ...
     router: {
       routes: [
