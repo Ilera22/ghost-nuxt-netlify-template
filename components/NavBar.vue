@@ -2,7 +2,7 @@
   <div id="app">
     <v-layout row justify-center>
       <v-responsive v-if="$vuetify.breakpoint.smAndDown">
-        <v-app-bar app color="red">
+        <v-app-bar app color="deep-purple accent-3">
           <v-btn plain @click="goToIndex">Gremio KTG</v-btn>
           <v-spacer></v-spacer>
           <v-app-bar-nav-icon @click="menuOpen = !menuOpen"></v-app-bar-nav-icon>
@@ -24,7 +24,7 @@
       </v-responsive>
 
       <v-responsive v-else>
-        <v-app-bar app dark color="blue-grey darken-1">
+        <v-app-bar app dark color="deep-purple accent-3">
           <v-btn plain @click="goToIndex">Gremio KTG</v-btn>
           <v-spacer></v-spacer>
           <v-app-bar-items>
@@ -78,3 +78,7 @@ export default {
   },
 };
 </script>
+
+<style>
+/* Estilos personalizados para el carrusel si es necesario */
+</style>
