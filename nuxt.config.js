@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 
 // Carga las variables de entorno desde el archivo .env
 dotenv.config();
+console.log('API_BASE_URL:', process.env.API_BASE_URL);
+console.log('API_CONTENT_KEY:', process.env.API_CONTENT_KEY);
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
