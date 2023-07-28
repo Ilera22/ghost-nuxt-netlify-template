@@ -16,7 +16,7 @@
             </v-card-title>
             <v-card-text>
               <NuxtLink to="/">
-                Home page
+                Vamos a la pagina principal
               </NuxtLink>
             </v-card-text>
           </v-card>
@@ -38,8 +38,8 @@ export default {
   },
   data () {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
+      pageNotFound: 'Oppps creo que nos pedimos 404 Not Found',
+      otherError: 'Alfo Salio Mal'
     }
   },
   head () {
