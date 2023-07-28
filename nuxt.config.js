@@ -50,8 +50,6 @@ export default {
     router: {
       routes: [
         {
-          path: '/ghost-test',
-          component: '~/pages/GhostTest.vue',
         },
       ],
     },
