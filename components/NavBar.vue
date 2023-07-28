@@ -2,7 +2,7 @@
   <div id="app">
     <v-layout row justify-center>
       <v-responsive v-if="$vuetify.breakpoint.smAndDown">
-        <v-app-bar app color="purple darken-4">
+        <v-app-bar app color="purple draken-4">
           <v-btn plain @click="goToIndex">GremioKTG</v-btn>
           <v-spacer></v-spacer>
           <v-app-bar-nav-icon @click="menuOpen = !menuOpen"></v-app-bar-nav-icon>
