@@ -6,6 +6,7 @@
     show-arrows-on-hover
   >
     <v-carousel-item
+      delimiter-icon="mdi-minus"
       v-for="(slide, i) in slides"
       :key="i"
     >
