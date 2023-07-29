@@ -23,7 +23,7 @@ export async function getPosts(limit = 5) {
 const ghostApi = new GhostContentAPI({
   url: apiBaseUrl,
   key: apiKey,
-  version: 'v3',
+  version: 'v3.0',
 });
 
 export default ghostApi;
