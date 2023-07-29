@@ -1,7 +1,7 @@
 import axios from 'axios';
 import GhostContentAPI from '@tryghost/content-api';
 
-const apiBaseUrl = 'http://128.199.8.129/ghost/api/v3';
+const apiBaseUrl = 'https://128.199.8.129/ghost/api/v3';
 const apiKey = 'a1e0fcf6f7ea7a36249cf02e53';
 
 export async function getPosts(limit = 5) {
