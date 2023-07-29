@@ -1,14 +1,9 @@
 import axios from 'axios';
-import GhostContentAPI from '@tryghost/content-api';
 
-const apiBaseUrl = process.env.API_BASE_URL;
-const apiKey = process.env.API_CONTENT_KEY;
+const apiBaseUrl = 'http://128.199.8.129/ghost/api/v3';
+const apiKey = 'a1e0fcf6f7ea7a36249cf02e53';
 
-// Agrega este console.log dentro de la función getPosts para verificar los valores de las variables de entorno
 export async function getPosts(limit = 5) {
-  console.log('API_BASE_URL:', apiBaseUrl);
-  console.log('API_CONTENT_KEY:', apiKey);
-
   try {
     const response = await axios.get(`${apiBaseUrl}/posts`, {
       params: {
@@ -17,17 +12,18 @@ export async function getPosts(limit = 5) {
         key: apiKey,
       },
     });
-    return response.data.posts;
+    // Asegurarte de que los posts tienen un id y un título
+    return response.data.posts.filter(post => post.id && post.title);
   } catch (error) {
-    console.error('Error al obtener los posts:', error);
-    throw error;
+    // Aquí puedes manejar el error, por ejemplo rechazando la promesa
+    throw new Error('Error al obtener los posts');
   }
 }
 
 const ghostApi = new GhostContentAPI({
   url: apiBaseUrl,
   key: apiKey,
-  version: 'v3.0',
+  version: 'v3',
 });
 
 export default ghostApi;
